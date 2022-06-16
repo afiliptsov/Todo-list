@@ -11,17 +11,18 @@ const TodoListItem = props => {
       {todoListItems !== undefined ? (
         <ul>
           {todoListItems.map(activeCategory =>
+            // Support for multiple active categories
             activeCategory.list.map(item => (
               <li key={item.id}>
                 <div
                   key={item.id}
-                  onClick={() => checkListItem(todoListItems.key, item)}
+                  onClick={() => checkListItem(activeCategory.key, item)}
                 >
                   {item.checked ? <BiCheckboxChecked /> : <BiCheckbox />}
                 </div>
                 {item.description}
                 <TiDeleteOutline
-                  onClick={() => removeTodoItem(todoListItems.key, item)}
+                  onClick={() => removeTodoItem(activeCategory.key, item)}
                 />
               </li>
             )),

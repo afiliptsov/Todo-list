@@ -50,6 +50,8 @@ const Todo = () => {
   const [items, setItems] = useState(initialState)
 
   const removeTodoItem = (category, listItemId) => {
+    console.log('category', category)
+    console.log('listItemId', listItemId)
     let updatedItems = items.map(item =>
       item.key === category
         ? {...item, list: item.list.filter(x => x.id !== listItemId.id)}

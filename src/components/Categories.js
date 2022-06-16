@@ -8,7 +8,11 @@ const Categories = props => {
     <div className="categoriesWrapper">
       <ul>
         {categoriesList.map(category => (
-          <li onClick={() => activateCategory(category.id)} key={category.id}>
+          <li
+            style={category.active ? {color: 'red'} : {color: 'blue'}}
+            onClick={() => activateCategory(category.id)}
+            key={category.id}
+          >
             {category.key}
             <FiDelete />{' '}
           </li>
