@@ -21,6 +21,7 @@ ul {
 
 .todoContent {
   padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: flex-start;
   height: 300px;
@@ -29,4 +30,6 @@ ul {
 .addSection {
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid grey;
+  padding: 5px;
 }

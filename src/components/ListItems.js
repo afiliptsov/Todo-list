@@ -2,10 +2,10 @@ import React from 'react'
 import {TiDeleteOutline} from 'react-icons/ti'
 import {BiCheckboxChecked, BiCheckbox} from 'react-icons/bi'
 import '../styles/TodoListItem.css'
+import PropTypes from 'prop-types'
 
-const TodoListItem = props => {
+const ListItems = props => {
   const {todoListItems, removeTodoItem, toggleItem} = props
-  console.log('todoListItems', todoListItems)
 
   return (
     <div className="toDoListWrapper">
@@ -15,10 +15,9 @@ const TodoListItem = props => {
             // Support for multiple active categories
             activeCategory.list.map(item => (
               <div className="toDoListItem" key={item.id}>
-                {console.log('Item checked', item.checked)}
                 <div
                   className="todoListItemIcon"
-                  onClick={() => toggleItem(activeCategory.key, item)}
+                  onClick={() => toggleItem(activeCategory.id, item)}
                 >
                   {item.checked ? <BiCheckboxChecked /> : <BiCheckbox />}
                 </div>
@@ -28,7 +27,7 @@ const TodoListItem = props => {
                 </li>
                 <div className="todoListItemIcon todoListItemDeleteIcon">
                   <TiDeleteOutline
-                    onClick={() => removeTodoItem(activeCategory.key, item)}
+                    onClick={() => removeTodoItem(activeCategory.id, item)}
                   />
                 </div>
               </div>
@@ -42,4 +41,11 @@ const TodoListItem = props => {
   )
 }
 
-export default TodoListItem
+//props type checking
+ListItems.propTypes = {
+  todoListItems: PropTypes.array,
+  removeTodoItem: PropTypes.func,
+  toggleItem: PropTypes.func,
+}
+
+export default ListItems

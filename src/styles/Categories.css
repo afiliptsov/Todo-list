@@ -4,20 +4,24 @@
   margin-right: 10px;
   border-right: 1px grey solid;
   padding-right: 5px;
+  cursor: pointer;
+}
+.categorySection {
+  display: flex;
 }
 .listCategory {
   width: 100%;
+  padding: 2px;
 }
 .activeCategory {
   color: white;
   background-color: grey;
 }
-.addCategory {
-  bottom: 0;
-}
 
 .icon {
+  padding: 2px;
   vertical-align: middle;
   margin-right: 2px;
+  margin-left: 2px;
   float: right;
 }
