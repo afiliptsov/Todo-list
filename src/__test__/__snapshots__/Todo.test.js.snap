@@ -7,11 +7,11 @@ exports[`Todo snapshot validation Todo should match snapshot 1`] = `
   <div
     className="todoHeader"
   >
-    <h2
+    <h1
       data-testid="todoListHeader"
     >
       My ToDo List
-    </h2>
+    </h1>
     <label>
       Thu Jun 16 2022
     </label>

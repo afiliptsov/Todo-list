@@ -103,7 +103,7 @@ const Todo = () => {
   return (
     <div className="todoWrapper">
       <div className="todoHeader">
-        <h2 data-testid="todoListHeader">My ToDo List</h2>
+        <h1 data-testid="todoListHeader">My ToDo List</h1>
         <label>{new Date().toDateString()}</label>
       </div>
       <div className="todoContent">
