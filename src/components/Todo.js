@@ -1,58 +1,11 @@
 import React, {useState} from 'react'
 import Categories from './Categories'
 import ListItems from './ListItems'
+import defaultState from './state/introState'
 import '../styles/ToDo.css'
 
-//Initial State Intro
-const initialState = [
-  {
-    key: 'intro',
-    active: true,
-    id: 1,
-    list: [
-      {
-        id: 1,
-        description: 'Hi there ',
-        checked: false,
-      },
-      {
-        id: 2,
-        description: '<--- You can check items by clicking checkbox',
-        checked: true,
-      },
-      {
-        id: 3,
-        description: 'You can delete items too --->',
-        checked: false,
-      },
-      {
-        id: 4,
-        description: 'You can display multiple categories at the same time',
-        checked: false,
-      },
-    ],
-  },
-  {
-    key: 'groceries',
-    active: false,
-    id: 2,
-    list: [
-      {
-        id: 10,
-        description: 'potatoes ',
-        checked: false,
-      },
-      {
-        id: 11,
-        description: 'tomatoes',
-        checked: false,
-      },
-    ],
-  },
-]
-
 const Todo = () => {
-  const [items, setItems] = useState(initialState)
+  const [items, setItems] = useState(defaultState)
   const [userInput, setUserInput] = useState('')
 
   const addCategory = categoryName => {
@@ -150,35 +103,44 @@ const Todo = () => {
   return (
     <div className="todoWrapper">
       <div className="todoHeader">
-        <h2>My ToDo List</h2>
+        <h2 data-testid="todoListHeader">My ToDo List</h2>
         <label>{new Date().toDateString()}</label>
       </div>
       <div className="todoContent">
         <Categories
+          data-testid="categories"
           toggleCategory={toggleCategory}
           removeCategory={removeCategory}
           categoriesList={items}
         />
         <ListItems
+          data-testid="listItems"
           toggleItem={toggleItem}
           removeTodoItem={removeTodoItem}
           todoListItems={items.filter(category => category.active)}
         />
       </div>
-      <form className="addSection" onSubmit={handleFormSubmit}>
+      <form
+        data-testid="submitForm"
+        className="addSection"
+        onSubmit={handleFormSubmit}
+      >
         <input
+          data-testid="textInput"
           type="text"
           value={userInput}
           onChange={e => setUserInput(e.target.value)}
           placeholder="Category or Item"
         />
         <button
+          data-testid="categorySubmit"
           id="category_submit"
           onClick={e => handleFormSubmit(e, 'category')}
         >
           Add Category
         </button>
         <button
+          data-testid="listItemSubmit"
           id="listItem_submit"
           onClick={e => handleFormSubmit(e, 'listItem')}
         >

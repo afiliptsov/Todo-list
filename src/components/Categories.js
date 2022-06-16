@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 const Categories = props => {
   const {categoriesList, toggleCategory, removeCategory} = props
   return (
-    <div className="categoriesWrapper">
+    <div className="categoriesWrapper" data-testid="categoriesComponent">
       <ul>
         {categoriesList.map(category => (
           <div key={category.id} className="categorySection">
@@ -17,9 +17,10 @@ const Categories = props => {
               }
               key={category.id}
             >
-              <span>{category.key}</span>
+              <span data-testid={category.key}>{category.key}</span>
             </li>
             <FiDelete
+              data-testid={`${category.key}-delete`}
               onClick={() => removeCategory(category.id)}
               className="icon"
             />

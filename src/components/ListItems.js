@@ -22,8 +22,12 @@ const ListItems = props => {
                   {item.checked ? <BiCheckboxChecked /> : <BiCheckbox />}
                 </div>
                 <li>
-                  <div className="categoryToggle"></div>
-                  {item.description}
+                  <div
+                    className="categoryToggle"
+                    data-testid={item.description}
+                  >
+                    {item.description}
+                  </div>
                 </li>
                 <div className="todoListItemIcon todoListItemDeleteIcon">
                   <TiDeleteOutline
