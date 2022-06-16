@@ -3,13 +3,13 @@ import Categories from '../components/Categories/Categories'
 import mockState from '../state/mockState'
 import renderer from 'react-test-renderer'
 
-describe('Categories page elements are displayed', () => {
-  it('renders Categories  items component', () => {
+describe('Categories page elements', () => {
+  it('should render Categories component with mock data', () => {
     render(<Categories categoriesList={mockState} />)
     const getCategoryComponent = screen.getByTestId('categoriesComponent')
     expect(getCategoryComponent).toBeInTheDocument()
   })
-  it('intro is displayed from mock state', () => {
+  it('should display intro category', () => {
     render(<Categories categoriesList={mockState} />)
     const getCategoryComponent = screen.getByTestId('intro')
     expect(getCategoryComponent.innerHTML).toBe('intro')
