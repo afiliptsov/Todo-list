@@ -1,7 +1,5 @@
 # ToDo List App
 
-[![Todo-Image.png](https://i.postimg.cc/SRfrKMP3/Todo-Image.png)](https://postimg.cc/0KrmWbP0)
-
 # Features
 
 #### - You can add and remove categories and items.
