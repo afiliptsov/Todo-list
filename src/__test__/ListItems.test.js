@@ -1,7 +1,7 @@
-import {render, screen, fireEvent} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
 import renderer from 'react-test-renderer'
-import ListItems from '../../ListItems/ListItems'
-import mockState from '../../../state/mockState'
+import ListItems from '../components/ListItems/ListItems'
+import mockState from '../state/mockState'
 
 describe('ListItems page elements are displayed', () => {
   it('renders List Items component from mock data', () => {

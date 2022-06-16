@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react'
-import Categories from '../../Categories/Categories'
-import mockState from '../../../state/mockState'
+import Categories from '../components/Categories/Categories'
+import mockState from '../state/mockState'
 import renderer from 'react-test-renderer'
 
 describe('Categories page elements are displayed', () => {

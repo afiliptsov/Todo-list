@@ -1,8 +1,8 @@
-import {fireEvent, render, screen, waitFor} from '@testing-library/react'
+import {fireEvent, render, screen} from '@testing-library/react'
 import renderer from 'react-test-renderer'
-import Todo from '../../Todo/Todo'
+import Todo from '../components/Todo/Todo'
 
-describe('Todo page elements display tests', () => {
+describe('Todo page elements display', () => {
   it('should render Todo page Header', async () => {
     render(<Todo />)
     const getTitle = screen.getByTestId('todoListHeader')
@@ -25,7 +25,7 @@ describe('Todo page elements display tests', () => {
   })
 })
 
-describe('Input field tests', () => {
+describe('Input field', () => {
   it('should be able to type input', async () => {
     render(<Todo />)
     const inputElement = screen.getByTestId('textInput')
@@ -33,7 +33,7 @@ describe('Input field tests', () => {
     expect(inputElement.value).toBe('sports')
   })
 
-  it('input should be cleared after category submission', async () => {
+  it('input should be cleared after submission', async () => {
     const testCategory = 'sport'
     render(<Todo />)
     const inputElement = screen.getByTestId('textInput')
@@ -51,9 +51,7 @@ describe('Input field tests', () => {
     fireEvent.change(getListItemInput, {target: {value: 'Ham'}})
     fireEvent.click(addItemButton)
     const addedListItem = await screen.findAllByText('Ham')
-    await waitFor(() => {
-      expect(addedListItem).toHaveLength(1)
-    })
+    expect(addedListItem).toHaveLength(1)
   })
 
   it('should display category when added', async () => {
@@ -63,9 +61,7 @@ describe('Input field tests', () => {
     fireEvent.change(getCategoryInput, {target: {value: 'sports'}})
     fireEvent.click(addCategoryButton)
     const addedListItem = await screen.findAllByText('sports')
-    await waitFor(() => {
-      expect(addedListItem).toHaveLength(1)
-    })
+    expect(addedListItem).toHaveLength(1)
   })
 })
 
