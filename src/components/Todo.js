@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Categories from './Categories'
 import TodoListItem from './TodoListItem'
+import '../styles/ToDo.css'
 
 //Mockup of initialState
 const initialState = [
@@ -11,7 +12,8 @@ const initialState = [
     list: [
       {
         id: 12,
-        description: 'Buy groceries',
+        description:
+          'Buy groceries Buy groceries Buy groceries Buy groceries Buy groceries Buy groceries Buy groceries',
         checked: false,
       },
       {
@@ -74,14 +76,37 @@ const Todo = () => {
     setItems(checkedItem)
   }
 
+  const activateCategory = id => {
+    let testItem = items.map(item => {
+      if (item.id === id) {
+        item.active = !item.active
+      }
+      return item
+    })
+    setItems(testItem)
+  }
+
   return (
-    <div>
-      <Categories removeCategory addCategory categoriesList={items} />
-      <TodoListItem
-        checkListItem={checkListItem}
-        removeTodoItem={removeTodoItem}
-        todoListItems={items.filter(category => category.active)[0]}
-      />
+    <div className="todoWrapper">
+      <div className="todoHeader">
+        <h2>To Do List</h2>
+        <label>{new Date().toDateString()}</label>
+      </div>
+      <div className="todoContent">
+        <Categories
+          activateCategory={activateCategory}
+          removeCategory
+          addCategory
+          categoriesList={items}
+        />
+        <TodoListItem
+          checkListItem={checkListItem}
+          removeTodoItem={removeTodoItem}
+          //   todoListItems={items.filter(category => category.active)[0]}
+          todoListItems={items.filter(category => category.active)}
+        />
+      </div>
+      <div>Add Item</div>
     </div>
   )
 }

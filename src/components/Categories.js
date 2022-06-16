@@ -1,16 +1,20 @@
 import React from 'react'
 import {FiDelete} from 'react-icons/fi'
+import '../styles/Categories.css'
 
 const Categories = props => {
-  const {categoriesList, addCategory, removeCategory} = props
+  const {categoriesList, activateCategory, addCategory, removeCategory} = props
   return (
-    <ul>
-      {categoriesList.map(category => (
-        <li key={category.id}>
-          {category.key} <FiDelete />{' '}
-        </li>
-      ))}
-    </ul>
+    <div className="categoriesWrapper">
+      <ul>
+        {categoriesList.map(category => (
+          <li onClick={() => activateCategory(category.id)} key={category.id}>
+            {category.key}
+            <FiDelete />{' '}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
