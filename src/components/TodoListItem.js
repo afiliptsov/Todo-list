@@ -1,37 +1,44 @@
 import React from 'react'
 import {TiDeleteOutline} from 'react-icons/ti'
 import {BiCheckboxChecked, BiCheckbox} from 'react-icons/bi'
-import '../styles/ToDo.css'
+import '../styles/TodoListItem.css'
 
 const TodoListItem = props => {
-  const {todoListItems, removeTodoItem, checkListItem} = props
+  const {todoListItems, removeTodoItem, toggleItem} = props
+  console.log('todoListItems', todoListItems)
 
   return (
-    <>
-      {todoListItems !== undefined ? (
+    <div className="toDoListWrapper">
+      {todoListItems.length ? (
         <ul>
           {todoListItems.map(activeCategory =>
             // Support for multiple active categories
             activeCategory.list.map(item => (
-              <li key={item.id}>
+              <div className="toDoListItem" key={item.id}>
+                {console.log('Item checked', item.checked)}
                 <div
-                  key={item.id}
-                  onClick={() => checkListItem(activeCategory.key, item)}
+                  className="todoListItemIcon"
+                  onClick={() => toggleItem(activeCategory.key, item)}
                 >
                   {item.checked ? <BiCheckboxChecked /> : <BiCheckbox />}
                 </div>
-                {item.description}
-                <TiDeleteOutline
-                  onClick={() => removeTodoItem(activeCategory.key, item)}
-                />
-              </li>
+                <li>
+                  <div className="categoryToggle"></div>
+                  {item.description}
+                </li>
+                <div className="todoListItemIcon todoListItemDeleteIcon">
+                  <TiDeleteOutline
+                    onClick={() => removeTodoItem(activeCategory.key, item)}
+                  />
+                </div>
+              </div>
             )),
           )}
         </ul>
       ) : (
-        <div>Please select Category</div>
+        <div>Please add or select a Category</div>
       )}
-    </>
+    </div>
   )
 }
 

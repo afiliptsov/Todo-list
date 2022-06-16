@@ -20,8 +20,13 @@ ul {
 }
 
 .todoContent {
+  padding-top: 10px;
   display: flex;
   justify-content: flex-start;
   height: 300px;
-  column-gap: 30px;
+}
+
+.addSection {
+  display: flex;
+  justify-content: space-between;
 }

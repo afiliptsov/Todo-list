@@ -12,8 +12,7 @@ const initialState = [
     list: [
       {
         id: 12,
-        description:
-          'Buy groceries Buy groceries Buy groceries Buy groceries Buy groceries Buy groceries Buy groceries',
+        description: 'Buy groceries ',
         checked: false,
       },
       {
@@ -43,7 +42,7 @@ const initialState = [
 ]
 
 const addCategory = () => {}
-const removeCategory = () => {}
+
 const addTodoItem = () => {}
 
 const Todo = () => {
@@ -60,7 +59,7 @@ const Todo = () => {
     setItems(updatedItems)
   }
 
-  const checkListItem = (category, listItemId) => {
+  const toggleItem = (category, listItemId) => {
     // This covers Check and UnCheck functionality for items list
     let checkedItem = items.map(item =>
       item.key === category
@@ -78,7 +77,7 @@ const Todo = () => {
     setItems(checkedItem)
   }
 
-  const activateCategory = id => {
+  const toggleCategory = id => {
     let testItem = items.map(item => {
       if (item.id === id) {
         item.active = !item.active
@@ -96,19 +95,22 @@ const Todo = () => {
       </div>
       <div className="todoContent">
         <Categories
-          activateCategory={activateCategory}
+          toggleCategory={toggleCategory}
           removeCategory
           addCategory
           categoriesList={items}
         />
         <TodoListItem
-          checkListItem={checkListItem}
+          toggleItem={toggleItem}
           removeTodoItem={removeTodoItem}
           //   todoListItems={items.filter(category => category.active)[0]}
           todoListItems={items.filter(category => category.active)}
         />
       </div>
-      <div>Add Item</div>
+      <div className="addSection">
+        <div>Add Category</div>
+        <div>Add item</div>
+      </div>
     </div>
   )
 }

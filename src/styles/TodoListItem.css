@@ -1,0 +1,15 @@
+.toDoListWrapper {
+  width: 300px;
+}
+
+.toDoListItem {
+  display: flex;
+  margin-top: 3px;
+  width: 100%;
+}
+.todoListItemIcon {
+  font-size: 20px;
+}
+.todoListItemDeleteIcon {
+  margin-left: auto;
+}
