@@ -1,7 +1,7 @@
 import React from 'react'
 import {TiDeleteOutline} from 'react-icons/ti'
 import {BiCheckboxChecked, BiCheckbox} from 'react-icons/bi'
-import '../styles/TodoListItem.css'
+import '../../styles/TodoListItem.css'
 import PropTypes from 'prop-types'
 
 const ListItems = props => {
@@ -21,7 +21,7 @@ const ListItems = props => {
                 >
                   {item.checked ? <BiCheckboxChecked /> : <BiCheckbox />}
                 </div>
-                <p>
+                <div>
                   <li>
                     <div
                       className="categoryToggle"
@@ -30,7 +30,7 @@ const ListItems = props => {
                       {item.description}
                     </div>
                   </li>
-                </p>
+                </div>
                 <div className="todoListItemIcon todoListItemDeleteIcon">
                   <TiDeleteOutline
                     onClick={() => removeTodoItem(activeCategory.id, item)}

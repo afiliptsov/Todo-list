@@ -1,6 +1,6 @@
 import React from 'react'
 import {FiDelete} from 'react-icons/fi'
-import '../styles/Categories.css'
+import '../../styles/Categories.css'
 import PropTypes from 'prop-types'
 
 const Categories = props => {

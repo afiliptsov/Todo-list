@@ -1,5 +1,7 @@
 import {fireEvent, render, screen} from '@testing-library/react'
-import Todo from '../components/Todo'
+import renderer from 'react-test-renderer'
+import mockState from '../../../state/mockState'
+import Todo from '../../Todo/Todo'
 
 describe('Todo page elements are displayed', () => {
   it('should render Todo page Header', async () => {
@@ -41,5 +43,12 @@ describe('Input', () => {
     expect(inputElement.value).toBe(testCategory)
     fireEvent.click(categoryButton)
     expect(inputElement.value).toBe('')
+  })
+})
+
+describe('Todo snapshot validation', () => {
+  it('Todo should match snapshot', () => {
+    const component = renderer.create(<Todo />).toJSON()
+    expect(component).toMatchSnapshot()
   })
 })

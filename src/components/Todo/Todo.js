@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import Categories from './Categories'
-import ListItems from './ListItems'
-import defaultState from './state/introState'
-import '../styles/ToDo.css'
+import Categories from '../Categories/Categories'
+import ListItems from '../ListItems/ListItems'
+import defaultState from '../../state/introState'
+import '../../styles/ToDo.css'
 
 const Todo = () => {
   const [items, setItems] = useState(defaultState)
