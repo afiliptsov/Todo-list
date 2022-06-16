@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react'
+import {render, screen, fireEvent} from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import ListItems from '../../ListItems/ListItems'
 import mockState from '../../../state/mockState'
