@@ -1,6 +1,6 @@
 # ToDo List App
 
-![](https://i.postimg.cc/SRfrKMP3/Todo-Image.png)
+![](https://github.com/afiliptsov/Todo-list)
 
 # Features
 
