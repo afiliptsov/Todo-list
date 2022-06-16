@@ -4,10 +4,10 @@
   margin-right: 10px;
   border-right: 1px grey solid;
   padding-right: 5px;
-  cursor: pointer;
 }
 .categorySection {
   display: flex;
+  cursor: pointer;
 }
 .listCategory {
   width: 100%;

@@ -9,7 +9,7 @@ const Categories = props => {
     <div className="categoriesWrapper" data-testid="categoriesComponent">
       <ul>
         {categoriesList.map(category => (
-          <div key={category.id} className="categorySection">
+          <p key={category.id} className="categorySection">
             <li
               onClick={() => toggleCategory(category.id)}
               className={
@@ -19,12 +19,13 @@ const Categories = props => {
             >
               <span data-testid={category.key}>{category.key}</span>
             </li>
+
             <FiDelete
               data-testid={`${category.key}-delete`}
               onClick={() => removeCategory(category.id)}
               className="icon"
             />
-          </div>
+          </p>
         ))}
       </ul>
     </div>
