@@ -27,23 +27,6 @@ const initialState = [
       },
     ],
   },
-  {
-    key: 'groceries',
-    active: false,
-    id: 2,
-    list: [
-      {
-        id: 10,
-        description: 'potatoes ',
-        checked: false,
-      },
-      {
-        id: 11,
-        description: 'tomatoes',
-        checked: false,
-      },
-    ],
-  },
 ]
 
 export default initialState

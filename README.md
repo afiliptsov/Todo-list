@@ -14,6 +14,10 @@
 
 ##### - pull repository.
 
+```sh
+git clone https://github.com/afiliptsov/Todo-list.git
+```
+
 ##### - move to project folder.
 
 ```sh
@@ -24,6 +28,12 @@
 
 ```sh
  npm i
+```
+
+##### - run unit test.
+
+```sh
+ npm test a
 ```
 
 ##### - Start the application.
