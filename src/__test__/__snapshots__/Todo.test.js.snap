@@ -25,7 +25,7 @@ exports[`Todo snapshot validation Todo should match snapshot 1`] = `
     >
       <ul>
         <div
-          className="categorySection"
+          className="categorySection categorySectionActive"
         >
           <li
             className="listCategory activeCategory"
@@ -41,7 +41,7 @@ exports[`Todo snapshot validation Todo should match snapshot 1`] = `
             data-testid="delete"
           >
             <svg
-              className="icon"
+              className="icon iconActive"
               fill="none"
               height="1em"
               onClick={[Function]}

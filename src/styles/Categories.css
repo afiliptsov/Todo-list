@@ -8,6 +8,11 @@
 .categorySection {
   display: flex;
   cursor: pointer;
+  border: 1px;
+}
+.categorySectionActive {
+  background-color: #7e7e7e;
+  border: 1px solid #b5b5b5;
 }
 .listCategory {
   width: 100%;
@@ -15,7 +20,6 @@
 }
 .activeCategory {
   color: white;
-  background-color: grey;
 }
 
 .icon {
@@ -24,4 +28,7 @@
   margin-right: 2px;
   margin-left: 2px;
   float: right;
+}
+.iconActive {
+  color: white;
 }

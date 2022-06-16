@@ -9,7 +9,14 @@ const Categories = props => {
     <div className="categoriesWrapper" data-testid="categoriesComponent">
       <ul>
         {categoriesList.map(category => (
-          <div key={category.id} className="categorySection">
+          <div
+            key={category.id}
+            className={
+              category.active
+                ? 'categorySection categorySectionActive'
+                : 'categorySection'
+            }
+          >
             <li
               onClick={() => toggleCategory(category.id)}
               className={
@@ -22,7 +29,7 @@ const Categories = props => {
             <div data-testid="delete">
               <FiDelete
                 onClick={() => removeCategory(category.id)}
-                className="icon"
+                className={category.active ? 'icon iconActive' : 'icon'}
               />
             </div>
           </div>

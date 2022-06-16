@@ -7,7 +7,7 @@ exports[`Categories component snapshot validation categories should match snapsh
 >
   <ul>
     <div
-      className="categorySection"
+      className="categorySection categorySectionActive"
     >
       <li
         className="listCategory activeCategory"
@@ -23,7 +23,7 @@ exports[`Categories component snapshot validation categories should match snapsh
         data-testid="delete"
       >
         <svg
-          className="icon"
+          className="icon iconActive"
           fill="none"
           height="1em"
           onClick={[Function]}
