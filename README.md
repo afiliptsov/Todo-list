@@ -1,6 +1,6 @@
 # ToDo List App
 
-![](https://i.postimg.cc/PqYV9vq0/Screen-Shot-2022-06-16-at-2-09-09-AM.png)
+![](https://i.ibb.co/bd1tLY8/Todo-Image.png)
 
 # Features
 
